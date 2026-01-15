@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            width: 209px;
+            height: 30px;
+            margin: 10px 0 0 0 0;
+            background: purple;
+            color: white;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: purple;
+            border: 2px solid purple;
+            transition: 2s ease;
+        }
+
+        span {
+            color: purple;
+        }
+
+        .btn2 {
+            width: 209px;
+            height: 30px;
+            background: rgba(255, 126, 255, 0.929);
+            margin: 10px  0 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Task 1-->
+    <div style=" display: flex ; flex-direction: column; justify-content: center; align-items: center; gap: 10px;">
+        <h3>Anbar Mehsul Yoxlama</h3>
+        <input id="a" style="height: 25px; width: 200px; border: 2px solid purple;" type="number" />
+        <button class="btn" onclick="yoxla()">Yoxla</button>
+        <div style="margin: 20px 0 0 0 ;" id="ntc"></div>
+    </div>
+    <script>
+        let a = document.getElementById('a');
+        let ntc = document.getElementById('ntc');
+        let klaviatura = 1
+        let telefon = 2
+        let laptop = 3
+        let qulaqliq = 4
+        function yoxla() {
+            if (a.value == klaviatura) { ntc.innerHTML = 'Bu ID-li mehsul var : Klaviatura' }
+            else if (a.value == telefon) { ntc.innerHTML = 'Bu ID-li mehsul var : Telefon' }
+            else if (a.value == laptop) { ntc.innerHTML = 'Bu ID-li mehsul var : Laptop' }
+            else if (a.value == qulaqliq) { ntc.innerHTML = 'Bu ID-li mehsul var : Qulaqliq' }
+            else { ntc.innerHTML = 'Bele mehsul yoxdur' }
+        }
+    </script>
+
+    <!--Task 2-->
+    <div style=" display: flex ; flex-direction: column; justify-content: center; align-items: center;">
+        <h3>Sade Balans Sistemi</h3>
+        <h4 id="balans">Balans : 500 AZN</h4>
+        <input  id="miqdar" style="height: 25px; width: 200px; border: 2px solid purple;" type="number" />
+        <button onclick="button1()" class="btn2"><span>+</span> Pul artir</button>
+        <button onclick="button2()" class="btn2"><span>-</span> Pul çixar</button>
+        <div id="ntc2" style="margin: 10px  0 0 0;"></div>
+    </div>
+    <script>
+        let balans = document.getElementById('balans');
+        let miqdar = document.getElementById('miqdar');
+        let ntc2 = document.getElementById('ntc2');
+        let balansmiqdari = 500 
+        function button1(){
+            if(miqdar.value < 500)
+        {
+            balansmiqdari = balansmiqdari + +miqdar.value
+            balans.innerHTML = `Balans : ${balansmiqdari} AZN`
+            ntc2.innerHTML = 'Balans artirildi'
+            
+        }
+        else{ntc2.innerHTML = 'Kifayet qeder vesait yoxdur'}
+        }
+        function button2(){
+            if(miqdar.value < 500)
+        {
+            balansmiqdari = balansmiqdari - +miqdar.value
+            balans.innerHTML = `Balans : ${balansmiqdari} AZN`
+            ntc2.innerHTML = 'Balans cixarildi'
+        }
+        else{ntc2.innerHTML = 'Kifayet qeder vesait yoxdur'}
+        }
+    </script>
+</body>
+
+</html>
